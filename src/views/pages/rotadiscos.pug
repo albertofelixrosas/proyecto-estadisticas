@@ -1,0 +1,25 @@
+extends ../templates/template
+
+block content 
+  #showcase.w3-container(style='margin-top: 80px')
+    h1.w3-jumbo
+      b Rotadiscos
+    .w3-row
+      .w3-container.w3-half
+        label Fecha: 
+        input.w3-select(type='date' data-date-inline-picker="true")
+      .w3-container.w3-half
+        label Turno: 
+        select.w3-select(name='option')
+          option(value='', disabled='', selected='') Escoge una opción
+          option(selected='selected', value='1') Matutino
+          option(value='2') Vespertino
+      .w3-container
+      p
+        button.w3-button.w3-block.w3-black Aceptar
+    
+block chart
+  .w3-container
+    .ct-chart.ct-perfect-fourth
+    script.
+        new Chartist.Line('.ct-chart', !{JSON.stringify(data)});

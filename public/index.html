@@ -1,0 +1,106 @@
+<!DOCTYPE html>
+<title>W3.CSS Template</title>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<link rel="stylesheet" href="https://www.w3schools.com/w3css/4/w3.css">
+<link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Poppins">
+<link rel="stylesheet" href="//cdn.jsdelivr.net/chartist.js/latest/chartist.min.css">
+<script src="//cdn.jsdelivr.net/chartist.js/latest/chartist.min.js"></script>
+<style>
+  body,
+  h1,
+  h2,
+  h3,
+  h4,
+  h5 {
+  font-family: "Poppins", sans-serif;
+  }
+  body {
+  font-size: 16px;
+  }
+  .w3-half img {
+  margin-bottom: -6px;
+  margin-top: 16px;
+  opacity: 0.8;
+  cursor: pointer;
+  }
+  .w3-half img:hover {
+  opacity: 1;
+  }
+</style>
+<!-- Sidebar/menu-->
+<nav class="w3-sidebar w3-red w3-collapse w3-top w3-large w3-padding" id="mySidebar" style="z-index: 3; width: 300px; font-weight: bold"><br><a class="w3-button w3-hide-large w3-display-topleft" href="javascript:void(0)" onclick="w3_close()" style="width: 100%; font-size: 22px">Close Menu</a>
+  <div class="w3-container">
+    <h3 class="w3-padding-64"><b>EDDNO</b><span><br>Diseño | Mantenimiento | Industrial</span></h3>
+  </div>
+  <div class="w3-bar-block"><a class="w3-bar-item w3-button w3-hover-white" href="#" onclick="w3_close()">Inicio</a><a class="w3-bar-item w3-button w3-hover-white" href="#showcase" onclick="w3_close()">Rota discos</a><a class="w3-bar-item w3-button w3-hover-white" href="#services" onclick="w3_close()">Rota tubos</a><a class="w3-bar-item w3-button w3-hover-white" href="#designers" onclick="w3_close()">Cocedor</a></div>
+</nav>
+<!-- Top menu on small screens-->
+<header class="w3-container w3-top w3-hide-large w3-red w3-xlarge w3-padding"><a class="w3-button w3-red w3-margin-right" href="javascript:void(0)" onclick="w3_open()">&#x2630;</a><span> </span><b>EDDNO</b></header>
+<!-- Overlay effect when opening sidebar on small screens-->
+<div class="w3-overlay w3-hide-large" id="myOverlay" onclick="w3_close()" style="cursor: pointer" title="close side menu"></div>
+<!-- !PAGE CONTENT!-->
+<div class="w3-main" style="margin-left: 340px; margin-right: 40px">
+  <div class="w3-container" id="showcase" style="margin-top: 80px">
+    <h1 class="w3-jumbo"><b>Inicio</b></h1>
+    <h1 class="w3-xxxlarge w3-text-red"><b>Showcase.</b></h1>
+    <hr class="w3-round" style="width: 50px; border: 5px solid red">
+  </div>
+  <!-- Photo grid (modal)-->
+  <div class="w3-row-padding">
+    <div class="w3-half"><img src="/w3images/kitchenconcrete.jpg" style="width: 100%" onclick="onClick(this)" alt="Concrete meets bricks"><img src="/w3images/livingroom.jpg" style="width: 100%" onclick="onClick(this)" alt="Light, white and tight scandinavian design"><img src="/w3images/diningroom.jpg" style="width: 100%" onclick="onClick(this)" alt="White walls with designer chairs"></div>
+    <div class="w3-half"><img src="/w3images/atrium.jpg" style="width: 100%" onclick="onClick(this)" alt="Windows for the atrium"><img src="/w3images/bedroom.jpg" style="width: 100%" onclick="onClick(this)" alt="Bedroom and office in one space"><img src="/w3images/livingroom2.jpg" style="width: 100%" onclick="onClick(this)" alt="Scandinavian design"></div>
+  </div>
+  <!-- Modal for full size images on click-->
+  <div class="w3-modal w3-black" id="modal01" style="padding-top: 0" onclick="this.style.display='none'"><span class="w3-button w3-black w3-xxlarge w3-display-topright">&times;</span>
+    <div class="w3-modal-content w3-animate-zoom w3-center w3-transparent w3-padding-64"><img class="w3-image" id="img01">
+      <p id="caption"></p>
+    </div>
+  </div>
+  <!-- Services-->
+  <div class="w3-container" id="services" style="margin-top: 75px">
+    <h1 class="w3-xxxlarge w3-text-red"><b>Services.</b></h1>
+    <hr class="w3-round" style="width: 50px; border: 5px solid red">
+    <p>
+      We are a interior design service that focus on what&apos;s best
+      for your home and what&apos;s best for you!
+    </p>
+    <p>
+      Some text about our services - what we do and what we offer.
+      We are lorem ipsum consectetur adipiscing elit, sed do
+      eiusmod tempor incididunt ut labore et dolore magna aliqua.
+      Ut enim ad minim veniam, quis nostrud exercitation ullamco
+      laboris nisi ut aliquip ex ea commodo consequat. Duis aute
+      irure dolor in reprehenderit in voluptate velit esse cillum
+      dolore eu fugiat nulla pariatur. Excepteur sint occaecat
+      cupidatat non proident, sunt in culpa qui officia deserunt
+      mollit anim id est laborum consectetur adipiscing elit, sed
+      do eiusmod tempor incididunt ut labore et dolore magna
+      aliqua. Ut enim ad minim veniam, quis nostrud exercitation
+      ullamco laboris nisi ut aliquip ex ea commodo consequat.
+    </p>
+  </div>
+  <!-- End page content-->
+</div>
+<!-- W3.CSS Container-->
+<div class="w3-light-grey w3-container w3-padding-32" style="margin-top: 75px; padding-right: 58px">
+  <p class="w3-right">Powered by<a class="w3-hover-opacity" href="https://www.w3schools.com/w3css/default.asp" title="W3.CSS" target="_blank">w3.css</a></p>
+</div>
+<script>
+  // Script to open and close sidebar
+  function w3_open() {
+  document.getElementById("mySidebar").style.display = "block";
+  document.getElementById("myOverlay").style.display = "block";
+  }
+  function w3_close() {
+  document.getElementById("mySidebar").style.display = "none";
+  document.getElementById("myOverlay").style.display = "none";
+  }
+  // Modal Image Gallery
+  function onClick(element) {
+  document.getElementById("img01").src = element.src;
+  document.getElementById("modal01").style.display = "block";
+  var captionText = document.getElementById("caption");
+  captionText.innerHTML = element.alt;
+  }
+</script>
